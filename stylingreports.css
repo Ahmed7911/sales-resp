@@ -1,0 +1,462 @@
+.main-container {
+    display: flex;
+    
+}
+.wrapper {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .wrapper .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease-out;
+  }
+
+  .wrapper .tooltip {
+    position: absolute;
+    left: 60px;
+    font-size: 14px;
+    background: #fff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+
+  .wrapper .icon:hover .tooltip {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .wrapper .icon:hover {
+    transform: scale(1.1);
+  }
+
+  .wrapper .facebook:hover,
+  .wrapper .facebook:hover .tooltip {
+    background: #4267B2;
+    color: #fff;
+  }
+
+  .wrapper .whatsapp:hover,
+  .wrapper .whatsapp:hover .tooltip {
+    background: #25D366;
+    color: #fff;
+  }
+
+  .wrapper .twitter:hover,
+  .wrapper .twitter:hover .tooltip {
+    background: #1DA1F2;
+    color: #fff;
+  }
+
+  .wrapper .instagram:hover,
+  .wrapper .instagram:hover .tooltip {
+    background: #E4405F;
+    color: #fff;
+  }
+
+  .wrapper .github:hover,
+  .wrapper .github:hover .tooltip {
+    background: #333;
+    color: #fff;
+  }
+
+  .wrapper .youtube:hover,
+  .wrapper .youtube:hover .tooltip {
+    background: #CD201F;
+    color: #fff;
+  }
+  .navbar {
+    width: 100%; /* Full width for nav on small screens */
+  }
+  .navbar .logo {
+    width: 100px; /* Adjust logo width as needed */
+    height: 100px; /* Adjust logo height as needed */
+    object-fit: contain; /* Ensure the logo scales properly */
+  }
+  .navbar .maintitle {
+    font-size: 24px; /* Adjust font size as needed */
+    font-weight: bold; /* Make the title bold */
+    color: #fff; /* Set text color to white */
+  }
+  
+/* Navbar Styles */
+.navbar {
+  max-width: 300px; /* Fixed width for the nav */
+  background-color: #f5f3f333;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex-start;
+  position: absolute;
+}
+
+/* Logo Styles */
+.logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.logo img {
+  width: 40px;
+  height: auto;
+  margin-left: 10px;
+}
+
+.logo a {
+  color: #fff;
+  font-size: 1.2rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Nav Links Styles */
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li {
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.nav-links img {
+  width: 24px;
+  height: auto;
+  margin-left: 10px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #f39c12;
+}
+
+/* Hide submenu items by default */
+.nav-links li {
+  display: none;
+}
+/* Show submenu items when hovering over the main item */
+.navbar:hover .nav-links li {
+  display: flex;
+  width: fit-content !important;
+  background-color: rgba(255, 255, 255, 0.11) !important;
+}
+.navbar:active .nav-links li {
+  display: flex;
+}
+.navbar:hover {
+  width: 300px;
+  background-color: #000;
+  flex: content;
+}
+/* Report Button Styles */
+.report-btn {
+  padding: 12px 24px;
+  margin: 8px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(145deg, #2980b9, #3498db);
+  color: white;
+  font-size: 1rem;
+  font-family: 'Noto Kufi Arabic', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.report-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(145deg, #3498db, #2980b9);
+}
+
+.report-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Date Select Styles */
+.date-select {
+  padding: 10px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-family: 'Noto Kufi Arabic', sans-serif;
+  color: #333;
+  width: 200px;
+  transition: all 0.3s ease;
+}
+
+.date-select:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+  outline: none;
+}
+
+/* Select2 Custom Styling */
+.select2-container--default .select2-selection--single {
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  height: 42px;
+  padding: 6px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: 40px;
+}
+
+.select2-dropdown {
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+  background-color: #3498db;
+}
+
+/* Date Range Container */
+.date-range {
+  display: flex;
+  gap: 20px;
+  margin: 20px 0;
+  justify-content: center;
+}
+
+.date-input {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.date-input label {
+  font-family: 'Noto Kufi Arabic', sans-serif;
+  color: #333;
+  font-size: 0.9rem;
+}
+/* Container styling */
+.reports-container {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  width: 80%;
+  max-width: 800px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Report buttons container */
+.report-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+/* Report button styling */
+.report-btn {
+  min-width: 150px;
+  text-align: center;
+}
+
+/* Date range container adjustments */
+.date-range {
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Date input container adjustments */
+.date-input {
+  flex: 1;
+  align-items: center;
+  text-align: center;
+}
+
+/* Select2 container width adjustment */
+.date-input .select2-container {
+  width: 100% !important;
+}
+/* Generate report button styling */
+.generate-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 200px;
+}
+
+.generate-btn:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.generate-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.generate-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.3);
+}
+
+/* Report Form Styles */
+.report-form {
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-group select,
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: 'Noto Kufi Arabic', sans-serif;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.submit-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    max-width: 200px;
+    display: block;
+    margin: 2rem auto;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.submit-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .report-form {
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    .form-group select,
+    .form-group input,
+    .form-group textarea {
+        font-size: 0.9rem;
+    }
+}
+
+.report-header {
+                text-align: center;
+                margin-bottom: 20px;
+                font-family: 'Noto Kufi Arabic', sans-serif;
+                font-size: 24px;
+                font-weight: bold;
+                color: #333;
+                display: block;
+                margin-top: 40px;
+            }
+            .report-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+            .report-table th, .report-table td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: center;
+            }
+            .report-table th {
+                background-color: #f2f2f2;
+                color: #333;
+            }
+            .report-table td {
+                background-color: #fff;
+            }
+            .print-btn {
+                background-color:rgb(87, 92, 87);
+                color: white;
+                padding: 12px 24px;
+                border: none;
+                border-radius: 8px;
+                font-size: 1rem;
+                font-weight: 600;
+                cursor: pointer;
+                margin-top: 1.5rem;
+            }
+       

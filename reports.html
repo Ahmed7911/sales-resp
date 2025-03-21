@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylingreports.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="reportsjava.js"></script>
+    <title>التقارير</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="reportsjava.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <link rel="stylesheet" href="css/stylingprint.css">
+    <script src="js/loader.js"></script>
+</head>
+<body>
+  <div class="main-container">  
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/home.png">
+            <a href="main.html" class="maintitle">الصفحة الرئيسية</a>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <ul class="nav-links" id="nav-links">
+            <li><img src="images/products.png" alt="Products Icon"><a href="#">السلع</a></li>
+            <li><img src="images/customers.png" alt="Customers Icon"><a href="#">الزبائن</a></li>
+            <li><img src="images/list.png" alt="Sales List Icon"><a href="#">قائمة المبيعات</a></li>
+            <li><img src="images/report.png" alt="Report Icon"><a href="printreciet.html">طباعة الاوردر</a></li>
+            <li><img src="images/orderlist.png" alt="Order List Icon"><a href="#">الموردون</a></li>
+            <li><img src="images/cusromerlede.png" alt="Customer Ledger Icon"><a href="#">حساب الزبائن</a></li>
+            <li><img src="images/report.png" alt="Report Icon"><a href="#">التقارير</a></li>
+            <li><img src="images/charts.png" alt="Charts Icon"><a href="#">رسم بيانى</a></li>
+        </ul>
+    </nav>
+<div>
+    <div class="reports-container">
+        <div class="report-buttons">
+            <button class="report-btn" onclick="generateReport('daily')">تقرير يومي</button>
+            <button class="report-btn" onclick="generateReport('weekly')">تقرير أسبوعي</button>
+            <button class="report-btn" onclick="generateReport('monthly')">تقرير شهري</button>
+            <button class="report-btn" onclick="generateReport('annual')">تقرير سنوي</button>
+        </div>
+
+        <div class="date-range">
+            <div class="date-input">
+                <label for="startDate">من تاريخ:</label>
+                <select id="startDate" class="date-select">
+                    <option value="">اختر التاريخ</option>
+                </select>
+            </div>
+
+            <div class="date-input">
+                <label for="endDate">إلى تاريخ:</label>
+                <select id="endDate" class="date-select">
+                    <option value="">اختر التاريخ</option>
+                </select>
+                <button class="generate-btn" onclick="generateReport()">توليد التقرير</button>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div id="reporttable" class="report-table report-header ">
+        
+    </div>
+</div>
+    <div class="wrapper">
+        <div class="icon facebook">
+            <i class="fa fa-facebook-f"></i>
+            <span class="tooltip">Facebook</span>
+        </div>
+        <div class="icon whatsapp">
+            <i class="fa fa-whatsapp"></i>
+            <span class="tooltip">WhatsApp</span>
+        </div>
+        <div class="icon twitter">
+            <i class="fa fa-twitter"></i>
+            <span class="tooltip">Twitter</span>
+        </div>
+        <div class="icon instagram">
+            <i class="fa fa-instagram"></i>
+            <span class="tooltip">Instagram</span>
+        </div>
+        <div class="icon github">
+            <i class="fa fa-github"></i>
+            <span class="tooltip">Github</span>
+        </div>
+        <div class="icon youtube">
+            <i class="fa fa-youtube"></i>
+            <span class="tooltip">Youtube</span>
+        </div>
+    </div>
+
+    <script>
+    $(document).ready(function() {
+        $('.date-select').select2({
+            placeholder: "اختر التاريخ",
+            allowClear: true,
+            dir: "rtl"
+        });
+
+        // Handle form submission
+        $('#reportForm').on('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                type: $('#reportType').val(),
+                title: $('#reportTitle').val(),
+                description: $('#reportDescription').val(),
+                data: JSON.parse($('#reportData').val()),
+                startDate: $('#startDate').val(),
+                endDate: $('#endDate').val()
+            };
+
+            // Send data to server
+            fetch('/api/reports', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('تم حفظ التقرير بنجاح');
+                generateReport(formData.type);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('حدث خطأ أثناء حفظ التقرير');
+            });
+        });
+    });
+    </script>
+    </div>
+</body>
+</html>

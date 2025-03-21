@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <title>مرحبًا</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--<script src="loginjava.js"></script>-->
+    <style>
+        /* Loader container */
+        .loader {
+            border: 8px solid #f3f3f3; /* Light grey */
+            border-top: 8px solid #3498db; /* Blue */
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+        }
+
+        /* Spin animation */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Overlay to darken the background */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        /* Hide the loader and overlay when the page is loaded */
+        .loaded .overlay {
+            display: none;
+        }
+
+        .loaded .loader {
+            display: none;
+        }
+    </style>
+</head>
+
+    
+<body style="background: linear-gradient(to bottom, #0f0f0f, #0c0c0c);">
+    <!-- Loader and Overlay -->
+    <div class="overlay">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Page Content -->
+    <div class="content">
+        <h1>Welcome to My Website</h1>
+        <p>This is some content that loads after the page is ready.</p>
+    </div>
+
+    <script>
+        // Hide the loader when the page is fully loaded
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
+    </script>
+
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="images/first.jpg" class="d-block w-100" alt="أفضل اختيار" style="width: 450px; height: 700px;">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>أفضل اختيار</h5>
+                    <p style="font-family:monospace;font-size: 20px; font-weight: 200; font-style: bold; background-color: rgba(255, 255, 255, 0.452); border-radius: 15px; border: none; box-shadow: rgba(255, 255, 255, 0.336);">سوبر ماركت <strong>(أحمد الصياد)</strong> هو وجهتك المثالية لتجربة تسوق ممتعة ومريحة، حيث تجد تشكيلة واسعة من المنتجات الطازجة والسلع عالية الجودة بأسعار تنافسية.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/second.jpg" class="d-block w-100" alt="الحداثة" style="width: 450px; height: 700px;">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>الحداثة</h5>
+                    <p style="font-family:monospace;font-size: 20px; font-weight: 200; font-style: bold; background-color: rgba(255, 255, 255, 0.452); border-radius: 15px; border: none; box-shadow: rgba(255, 255, 255, 0.336);">يتميز سوبر ماركت <strong>احمد الصياد</strong>(الحداثة في كل جانب، بدءًا من التصميم العصري للمتجر وحتى أحدث التقنيات المستخدمة في إدارة المخزون والدفع. نوفر تجربة تسوق متطورة وسلسة، مع أقسام منظمة بشكل يسهل الوصول إلى المنتجات، وشاشات عرض رقمية تعرض أحدث العروض والمنتجات الجديدة. كما نعتمد على أنظمة دفع حديثة لتوفير أقصى درجات الراحة لعملائنا.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <video src="images/third.mp4"  class="d-block w-100" alt="متعة التسوق" style="width: 450px; height: 700px;"></video>
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>متعة التسوق</h5>
+                    <p style="font-family:monospace; font-size: 20px; font-weight: 200; font-style: bold; background-color: rgba(255, 255, 255, 0.452); border-radius: 15px; border: none; box-shadow: rgba(255, 255, 255, 0.336);">التسوق ليس مجرد عملية شراء، بل هو تجربة ممتعة ومثيرة للحواس. إليك بعض جوانب متعة التسوق اكتشاف الجديد: .تجديد النشاط: .متعة الاختيار: .الاسترخاء والترفيه: .</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <div>
+    <button type="button" class="btn btn-success btn-block  m-3 d-block w-100 text-monospace" id="loginbtnm">تسجيل دخول</button>
+<button type="button" class="btn btn-warning btn-block  m-3 d-block w-100 text-monospace" id="registerbtnm">مستخدم جديد</button>
+</div>
+</body>
+<script>
+    document.getElementById('loginbtnm').addEventListener('click', function() {
+        window.location.href = 'login.html';
+    });
+    
+    document.getElementById('registerbtnm').addEventListener('click', function() {
+        window.location.href = 'register.html';
+    });
+
+</script>
+</html>
